@@ -1,0 +1,57 @@
+<style>
+    input {
+  border: #000;
+  padding: 10px;
+  font-size: 20px;
+  width: 100%;
+}
+
+</style>
+<div class="container" style="text-align: -webkit-center;">
+    
+    <img src ="./assets/logo-horizontal.png" style="
+    width: 75%;
+    margin-bottom: 5%;
+" />
+
+    <h1>DETECTION OF VISUALLY SIMILAR WEBSITES</h1>
+    <form #form = "ngForm" (ngSubmit)="onSubmit(form)">
+        <label for="url" style="font-size: 25px;"><b>Enter Url: </b> </label>
+            <input id="url" style="width: 15%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size:15;
+            box-sizing: border-box;" name="url" class="form-control" placeholder="url" 
+            [(ngModel)] ="phishingModal.url" 
+            required 
+            #urlField="ngModel"
+            [class.field-error]="form.submitted && urlField.invalid"/>
+            
+            <div [hidden] = "!form.submitted || urlField.valid"
+                class="alert alert-danger">
+                Enter a Url
+            </div>
+            <br>
+            <br>
+            <button class="btn btn-primary md-button" style="background-color: rgb(12, 66, 19); /* Green */
+            color: white;
+            padding: 10px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;">CheckUrl</button>
+    </form>
+    <br>
+    <br>
+    <br>
+    <div [hidden] = "!isMessageReceived" style="text-align: -webkit-center;" >
+        <h2 style="
+        color:rgb(12, 66, 19);white-space: pre-line"> {{ messageData[0] }}</h2><br><h2 style="
+        color:rgb(235, 47, 14);white-space: pre-line">{{ messageData[1] }}</h2> <br> <h3>{{ messageData[2] }} </h3> <br> <h3>{{ messageData[3] }}</h3> <br> <h3>{{ messageData[4] }}</h3> <br> <h3>{{ messageData[5] }}</h3>
+     </div>
+</div>
