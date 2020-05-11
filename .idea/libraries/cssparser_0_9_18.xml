@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="cssparser-0.9.18">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/demo/lib/cssparser/cssparser-0.9.18.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
